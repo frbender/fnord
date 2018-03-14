@@ -17,15 +17,18 @@ module.exports = async function (userid) {
                ON
                  fnord_project.owner = fnord_user.id
              WHERE
-               fnord_user.id = $1`,
+               fnord_user.id = $1
+             ORDER BY
+               fnord_project.id
+             DESC`,
             [userid]
         );
-        client.end();
+        client.release();
 
         return result.rows;
     } catch (_) {
         if (client) {
-            client.end();
+            client.release();
         }
         return false;
     }

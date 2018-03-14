@@ -131,12 +131,21 @@ p {
   }
 }
 
-.error {
+.error,
+.success {
+  flex-grow: 0;
   display: inline-block;
   border-radius: 100rem;
   padding: 0.8rem 1.5rem;
   color: @text-default;
+}
+
+.error {
   background-color: @error;
+}
+
+.success {
+  background-color: @success;
 }
 
 .header-bar {
@@ -190,6 +199,7 @@ p {
   box-sizing: border-box;
   padding: 3rem 4rem 0 4rem;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .space-top-large {
@@ -198,4 +208,20 @@ p {
 
 .space-bottom-large {
   margin-bottom: 3rem;
+}
+
+.space-top-medium {
+  margin-top: 2rem;
+}
+
+.space-bottom-medium {
+  margin-bottom: 2rem;
+}
+
+.space-top-small {
+  margin-top: 1rem;
+}
+
+.space-bottom-small {
+  margin-bottom: 1rem;
 }

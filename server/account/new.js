@@ -49,11 +49,11 @@ module.exports = async function (firstname, lastname, username, password) {
             status.success = true;
         }
 
-        client.end();
+        client.release();
         return status;
     } catch (_) {
         if (client) {
-            client.end();
+            client.release();
         }
         return status;
     }

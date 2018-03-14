@@ -10,7 +10,7 @@ module.exports = async function (username, password) {
             'SELECT ID, SALTED_PASSWORD_HASH, SALT FROM FNORD_USER WHERE USERNAME = $1',
             [username]
         );
-        client.end();
+        client.release();
 
         if (result.rows.length === 0) {
             return false;
@@ -23,7 +23,7 @@ module.exports = async function (username, password) {
         return success ? result.rows[0].id : false;
     } catch (_) {
         if (client) {
-            client.end();
+            client.release();
         }
         return false;
     }

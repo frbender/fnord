@@ -7,6 +7,6 @@ module.exports = async function (req, res) {
 
     res.render('overview', {
         projects: projectList,
-        showProjectOverview: false
+        showSuccessfulCreation: req.query.success === 'true'
     });
 };

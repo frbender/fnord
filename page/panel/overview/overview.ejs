@@ -1,8 +1,11 @@
 <%- include('header', { title: 'Projektübersicht'}) %>
-<%- include('header_bar') %>
+<%- include('header_bar', { showOverviewLink: false }) %>
 
 <div class="header-page">
     <h1 class="space-top-large">Meine Projekte</h1>
+    <% if (showSuccessfulCreation) { %>
+    <p class="success space-bottom-medium">Dein Projekt wurde erfolgreich angelegt</p>
+    <% } %>
     <div class="rich-selection">
         <ul>
             <% projects.forEach(project => { %>
