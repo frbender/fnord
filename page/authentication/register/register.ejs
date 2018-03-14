@@ -1,0 +1,37 @@
+<%- include('header', { title: 'Registrierung'}) %>
+<div class='authentication'>
+    <div class='page'>
+        <div class='logo'>
+            <a href="/"><img src="/static/logo.svg"/></a>
+        </div>
+        <% if (unknownError) { %>
+        <p class="error">Bitte überprüfe deine Eingaben auf Korrektheit.</p>
+        <% } %>
+        <% if (usernameTaken) { %>
+        <p class="error">Dein gewählter Benutzername ist leider bereits vergeben. Bitte wähle einen anderen.</p>
+        <% } %>
+        <h1>Registrierung</h1>
+        <form method="post" action="/authentication/forward?action=register" class="space-bottom-large">
+            <p>
+                <input name="firstname" type="text" placeholder="Vorname" value="<%= defaults.firstname %>">
+            </p>
+            <p>
+                <input name="lastname" type="text" placeholder="Nachname" value="<%= defaults.lastname %>">
+            </p>
+            <p>
+                <input name="username" type="text" placeholder="Username" value="<%= defaults.username %>">
+            </p>
+            <p>
+                <input name="password" type="password" placeholder="Passwort">
+            </p>
+            <p>
+                <input name="termsconditions" id="termsconditions" type="checkbox">
+                <label for="termsconditions">AGB akzeptieren</label>
+            </p>
+            <p>
+                <input type="submit" value="Registrieren">
+            </p>
+        </form>
+    </div>
+</div>
+<%- include('footer') %>

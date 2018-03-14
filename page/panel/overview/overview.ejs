@@ -1,0 +1,21 @@
+<%- include('header', { title: 'Projektübersicht'}) %>
+<%- include('header_bar') %>
+
+<div class="header-page">
+    <h1 class="space-top-large">Meine Projekte</h1>
+    <div class="rich-selection">
+        <ul>
+            <% projects.forEach(project => { %>
+            <li>
+                <div class="item">
+                    <span class="title"><%= project.name %></span>
+                    <span class="description"><%= project.url %></span>
+                </div>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+    <a href="/panel/new-project">Neues Projekt anlegen</a>
+</div>
+
+<%- include('footer') %>

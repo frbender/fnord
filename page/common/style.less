@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-width: 100%;
+  min-height: 100%;
+  background-color: @background-dark;
+  font-family: 'Open Sans', -apple-system, 'Helvetica Neue', 'Arial', sans-serif;
+  color: @text-default;
+  font-size: 1.8vh;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.clickable {
+  position: relative;
+  display: inline-block;
+  border-radius: 0.8rem;
+  padding: 0.5rem 1rem;
+  margin: -0.5rem -1rem;
+  cursor: default;
+  transition: background-color 250ms, padding 250ms, margin 250ms;
+  z-index: 10;
+
+  &:hover {
+    background-color: @background-hover;
+    z-index: 11;
+    padding: 0.6rem 1.1rem;
+    margin: -0.6rem -1.1rem;
+  }
+
+  &:active {
+    background-color: @background-press;
+    padding: 0.5rem 1rem;
+    margin: -0.5rem -1rem;
+  }
+}
+
+a[href] {
+  text-decoration: underline;
+  cursor: pointer;
+  color: @text-default;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+
+  p, a {
+    color: @text-light;
+    font-size: 0.8rem;
+  }
+}
+
+input {
+  padding: 0.3rem 0.6rem;
+  background-color: @control-background;
+  border: solid 1px @control-border;
+  border-radius: 3px;
+  outline: none;
+  color: @text-default;
+  font-size: 0.9rem;
+  width: 15rem;
+  vertical-align: center;
+
+  &:focus {
+    border: solid 2px @control-border-focus;
+    background-color: @control-background-focus;
+    margin: -1px;
+  }
+
+  &[type=submit] {
+    width: auto;
+    border-radius: 100rem;
+    background-color: @control-button;
+    border: none;
+  }
+}
+
+form {
+  p {
+    margin: 1rem 0;
+  }
+}
+
+p {
+  input[type=checkbox] {
+    width: auto;
+    display: none;
+  }
+  label {
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-size: 1rem 1rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+      margin-bottom: 0.25rem;
+      background: url('/static/checkbox_unchecked.svg') no-repeat center center;
+    }
+  }
+  input:checked + label:before {
+    background: url('/static/checkbox_checked.svg') no-repeat center center;
+  }
+}
+
+.error {
+  display: inline-block;
+  border-radius: 100rem;
+  padding: 0.8rem 1.5rem;
+  color: @text-default;
+  background-color: @error;
+}
+
+.header-bar {
+  width: 100%;
+  height: 3rem;
+  background-color: @background-light;
+  position: fixed;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 4rem;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+
+  .project-overview {
+    text-align: left;
+    flex-grow: 1;
+    flex-basis: 0;
+
+    a {
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+  }
+
+  .logo {
+    text-align: center;
+    height: 80%;
+    flex-grow: 1;
+    flex-basis: 0;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .user {
+    text-align: right;
+    flex-grow: 1;
+    flex-basis: 0;
+
+    a {
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+  }
+}
+
+.header-page {
+  display: flex;
+  box-sizing: border-box;
+  padding: 3rem 4rem 0 4rem;
+  flex-direction: column;
+}
+
+.space-top-large {
+  margin-top: 3rem;
+}
+
+.space-bottom-large {
+  margin-bottom: 3rem;
+}

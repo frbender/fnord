@@ -1,0 +1,30 @@
+<%- include('header', { title: 'Login'}) %>
+<div class='authentication'>
+    <div class='page'>
+        <div class='logo'>
+            <a href="/"><img src="/static/logo.svg"/></a>
+        </div>
+        <% if (wrongCredentials) { %>
+            <p class="error">Die eingegebenen Zugangsdaten scheinen nicht korrekt zu sein.</p>
+        <% } %>
+        <h1>Login</h1>
+        <p>Bitte melde dich mit deinen Zugangsdaten an.</p>
+        <form method="post" action="/authentication/forward?action=login" class="space-bottom-large">
+            <p>
+                <input name="username" type="text" placeholder="Username">
+            </p>
+            <p>
+                <input name="password" type="password" placeholder="Passwort">
+            </p>
+            <!--p>
+                <input name="remember" id="remember" type="checkbox" checked>
+                <label for="remember">Login merken</label>
+            </p-->
+            <p>
+                <input type="submit" value="Anmelden">
+            </p>
+        </form>
+        <p>Noch kein Account? <a href="/authentication/register">Hier</a> schnell einen anlegen.</p>
+    </div>
+</div>
+<%- include('footer') %>

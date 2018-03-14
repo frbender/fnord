@@ -1,0 +1,28 @@
+<%- include('header', { title: 'Neues Projekt anlegen'}) %>
+<%- include('header_bar') %>
+
+<div class="header-page">
+    <h1 class="space-top-large">Neues Projekt anlegen</h1>
+    <p>Ein Projekt erlaubt die Verwaltung von einem Subversion-Repository.</p>
+    <p>Indem du deine Zugangsdaten hinterlegst, kann fnord die Daten aus dem Repository abrufen und anzeigen.</p>
+    <form>
+        <p>
+            <input type="text" placeholder="Projektname">
+        </p>
+        <p>
+            <input type="text" placeholder="Repository-URL">
+        </p>
+        <p>
+            <input type="text" placeholder="Repository-Benutzername">
+        </p>
+        <p>
+            <input type="password" placeholder="Repository-Passwort">
+        </p>
+        <p>Achtung: Deine Repository-Zugangsdaten werden auf dem fnord-Server gespeichert!</p>
+        <p>
+            <input type="submit" value="Projekt anlegen">
+        </p>
+    </form>
+</div>
+
+<%- include('footer') %>
